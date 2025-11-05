@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Customer Shopping Behaviour Analysis — Kumar Gaurav</title>
+  <link rel="stylesheet" href="../../assets/css/style.css">
+  <style>
+    /* small page-specific overrides to match site theme */
+    body { background: #031025; color: #e6eef8; font-family: Arial, Helvetica, sans-serif; margin: 0; }
+    .panel { max-width: 1000px; margin: 36px auto; background: rgba(4,24,39,0.6); border: 1px solid rgba(198,155,48,0.12); padding: 28px; border-radius: 8px; }
+    h1, h2 { color: #C69B30; }
+    p { color: #d7e7f5; line-height: 1.55; }
+    .btn-row { display:flex; gap:10px; flex-wrap:wrap; margin:12px 0; }
+    .btn { border: 1.5px solid #C69B30; color: #C69B30; background: transparent; padding:10px 12px; border-radius:6px; text-decoration:none; font-weight:600; }
+    .btn:hover { background:#C69B30; color:#031025; }
+    .skills { display:flex; gap:8px; flex-wrap:wrap; margin:10px 0; }
+    .skill { background: rgba(198,155,48,0.12); color:#C69B30; padding:6px 10px; border-radius:6px; font-weight:600; }
+    .grid { display:grid; grid-template-columns: 1fr 1fr; gap:24px; }
+    .wide-img { width:100%; border-radius:8px; border:2px solid #C69B30; }
+    .gallery { display:flex; gap:12px; margin-top:12px; }
+    .gallery img { width:32%; border-radius:6px; border:1px solid rgba(198,155,48,0.18); }
+    .meta { font-size:0.95rem; color:#b6c6d8; }
+    footer { text-align:center; padding:18px; color:#9fb0c6; }
+    .download-icons { display:inline-flex; gap:8px; align-items:center; }
+    .back { display:inline-block; margin-top:18px; padding:8px 12px; border-radius:6px; border:1px solid rgba(255,255,255,0.06); text-decoration:none; color:#e6eef8; }
+  </style>
+</head>
+<body>
+  <header style="background:#041827;padding:14px 28px;">
+    <div style="max-width:1100px;margin:auto;display:flex;align-items:center;justify-content:space-between;">
+      <div style="display:flex;align-items:center;gap:12px;">
+        <div style="width:46px;height:46px;border-radius:10px;background:linear-gradient(135deg,#C69B30,#ffd36a);display:flex;align-items:center;justify-content:center;color:#031025;font-weight:700;">KG</div>
+        <div>
+          <div style="font-weight:700;">Kumar Gaurav</div>
+          <div style="font-size:13px;color:#b6c6d8;">Data Detective — Turning data mysteries into clear business insights</div>
+        </div>
+      </div>
+      <nav style="display:flex;gap:18px;align-items:center;">
+        <a href="../../index.html" style="color:#e6eef8;text-decoration:none;">Home</a>
+        <a href="../../projects.html" style="color:#e6eef8;text-decoration:none;">Projects</a>
+        <a href="https://www.linkedin.com/in/kumar-gaurav27/" target="_blank" style="color:#e6eef8;text-decoration:none;">LinkedIn</a>
+        <a href="../../resume/resume.pdf" class="btn" style="padding:8px 10px;">Resume</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="panel" role="main">
+    <h1>Customer Shopping Behaviour Analysis</h1>
+    <p class="meta">Data Detective: Turning data mysteries into clear business insights — A complete end-to-end data analytics case study built using Python, MySQL and Power BI.</p>
+
+    <div class="btn-row" aria-hidden="false" style="margin-top:16px;">
+      <a class="btn" href="Customer-Shopping-Behavior.pptx" download>📄 Presentation (pptx)</a>
+      <a class="btn" href="Customer Shopping behaviour.pbix" download>📊 Power BI (pbix)</a>
+      <a class="btn" href="Customer-Shopping-Behavior.ipynb" download>💻 Python Notebook</a>
+      <a class="btn" href="Customer Shopping behaviour.sql" download>🧾 SQL Queries</a>
+    </div>
+
+    <section style="margin-top:18px;">
+      <h2>Project Snapshot</h2>
+      <p>This project analyses the shopping behaviour of 3,900 customers across multiple product categories. The goal: understand spending patterns, customer segments, subscription impact, product category performance, seasonal trends, and drivers of retention. The insights feed marketing, product and retention strategies.</p>
+
+      <div class="grid" style="margin-top:16px;">
+        <div>
+          <h3>Dataset Summary</h3>
+          <ul class="meta">
+            <li>Rows: 3,900</li>
+            <li>Columns: 18</li>
+            <li>Key fields: Age, Gender, Location, Subscription Status, Category, Item, Amount, Season, Size, Rating, Shipping Type</li>
+            <li>Missing values handled: 37 missing review ratings</li>
+          </ul>
+
+          <h3 style="margin-top:12px;">Tools & Tech Stack</h3>
+          <div class="skills">
+            <span class="skill">Python</span>
+            <span class="skill">Pandas</span>
+            <span class="skill">NumPy</span>
+            <span class="skill">Matplotlib / Seaborn</span>
+            <span class="skill">MySQL</span>
+            <span class="skill">Power BI</span>
+            <span class="skill">Excel</span>
+          </div>
+
+          <h3 style="margin-top:12px;">Workflow (high-level)</h3>
+          <ol class="meta">
+            <li>Load & inspect raw data in Python; perform EDA</li>
+            <li>Clean data (missing values, types, outliers) and feature engineer (age group, purchase frequency)</li>
+            <li>Load cleaned tables to MySQL and run business queries for KPIs</li>
+            <li>Connect MySQL to Power BI and design interactive dashboard</li>
+            <li>Prepare stakeholder PPT and deliver recommendations</li>
+          </ol>
+        </div>
+
+        <div>
+          <h3>Business Problem & Goal</h3>
+          <p class="meta">Balanced focus: understand customer behaviour, raise subscription adoption, and identify category-level opportunities to increase revenue and retention.</p>
+
+          <h3 style="margin-top:12px;">Key Questions Answered (SQL & BI)</h3>
+          <ul class="meta">
+            <li>Revenue and average order value by gender and age group</li>
+            <li>Subscription vs. non-subscription spend</li>
+            <li>Top performing categories and discount-sensitive products</li>
+            <li>Loyal vs returning vs new customer patterns</li>
+            <li>Shipping preference impacts and seasonal trends</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section style="margin-top:22px;">
+      <h2>Dashboard & Visuals</h2>
+      <img class="wide-img" src="Dashboard Image.png" alt="Customer Dashboard – wide preview">
+      <div class="gallery">
+        <img src="Dashboard Image.png" alt="dashboard thumb 1">
+        <img src="Dashboard Image.png" alt="dashboard thumb 2">
+        <img src="Dashboard Image.png" alt="dashboard thumb 3">
+      </div>
+      <p style="margin-top:10px;" class="meta">Interactive dashboard includes KPIs: total revenue, AOV, subscription conversion, repeat buyer rate, category-wise sales, seasonal filters and customer-segmentation slicers.</p>
+    </section>
+
+    <section style="margin-top:20px;">
+      <h2>Key Insights</h2>
+      <ul>
+        <li>Only <strong>27%</strong> of customers are subscribers — a 73% conversion opportunity.</li>
+        <li>Female customers spend ~12% more per transaction on average (AOV ≈ $60.25).</li>
+        <li>Clothing and Accessories account for the largest revenue share; Footwear and Outerwear underperform.</li>
+        <li>Medium & Large sizes represent ~72% of size demand.</li>
+        <li>Spring is the strongest season for sales; Summer is weakest.</li>
+        <li>Young Adults are the most profitable segment; free shipping is the most preferred option.</li>
+      </ul>
+    </section>
+
+    <section style="margin-top:18px;">
+      <h2>Recommendations</h2>
+      <ul>
+        <li>Run targeted subscription campaigns for Young Adults and Middle-aged females using bundles and trial offers.</li>
+        <li>Promote Footwear and Outerwear with seasonal bundles and discounts to boost adoption.</li>
+        <li>Introduce loyalty tiers for repeat customers to increase CLV.</li>
+        <li>Optimize inventory for M & L sizes; align procurement with Spring peak demand.</li>
+      </ul>
+    </section>
+
+    <section style="margin-top:18px;">
+      <h2>Business Impact (Estimates)</h2>
+      <ul>
+        <li>Projected <strong>12–18%</strong> improvement in subscription conversion after targeted campaigns.</li>
+        <li>Estimated <strong>8–10%</strong> uplift in category sales with optimized promotions.</li>
+        <li>Improved CLV and retention from loyalty programs and better targeting.</li>
+      </ul>
+    </section>
+
+    <div style="margin-top:20px;" class="btn-row center">
+      <a class="btn" href="Customer-Shopping-Behavior.pptx" download>📄 Presentation</a>
+      <a class="btn" href="Customer Shopping behaviour.pbix" download>📊 Dashboard</a>
+      <a class="btn" href="Customer-Shopping-Behavior.ipynb" download>💻 Notebook</a>
+      <a class="btn" href="Customer Shopping behaviour.sql" download>🧾 SQL</a>
+    </div>
+
+    <div style="text-align:center;margin-top:22px;">
+      <a class="back" href="../../projects.html">← Back to Projects</a>
+    </div>
+  </main>
+
+  <footer>
+    © 2025 Kumar Gaurav — Data Analyst
+  </footer>
+</body>
+</html>
