@@ -1,72 +1,69 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Projects | Kumar Gaurav</title>
-    <link rel="stylesheet" href="assets/css/style.css" />
-    <script defer src="assets/js/script.js"></script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>All Projects | Kumar Gaurav</title>
+  <style>
+    *{margin:0;padding:0;box-sizing:border-box}
+    body{font-family:'Poppins',system-ui,sans-serif;color:#f1f1f1;overflow-x:hidden;background:linear-gradient(120deg,#031025,#041933,#072043,#0b2857);background-size:300% 300%;animation:gradientBG 18s ease infinite}
+    @keyframes gradientBG{0%{background-position:0% 50%}50%{background-position:100% 50%}100%{background-position:0% 50%}}
+    a{text-decoration:none;color:inherit}
+
+    header{position:fixed;top:0;left:0;width:100%;background:rgba(3,16,37,0.95);display:flex;justify-content:space-between;align-items:center;padding:14px 48px;z-index:1000;backdrop-filter:blur(6px)}
+    header nav a{margin-left:24px;font-weight:500;color:#e6eef8;transition:color .28s}
+    header nav a:hover{color:#C69B30}
+
+    section.projects{padding:120px 20px 80px;text-align:center}
+    h1{color:#C69B30;font-size:2rem;margin-bottom:30px}
+    .project-grid{display:flex;flex-wrap:wrap;justify-content:center;gap:24px}
+    .project-card{background:rgba(255,255,255,0.05);border:1px solid rgba(198,155,48,0.2);border-radius:10px;padding:20px;width:300px;transition:transform .3s}
+    .project-card:hover{transform:translateY(-8px);border-color:#C69B30}
+    .project-card h3{color:#C69B30;margin-bottom:10px}
+    .project-card p{font-size:.95rem;color:#d0d0d0}
+    .project-card a{display:inline-block;margin-top:10px;color:#C69B30;font-weight:600}
+
+    footer{background:rgba(3,16,37,0.9);text-align:center;padding:20px;font-size:.9rem;color:#9fb0c6;margin-top:60px}
+
+    @media(max-width:768px){
+      header{padding:12px 24px;flex-direction:column}
+      .project-card{width:90%}
+    }
+  </style>
 </head>
 <body>
-
-<header>
-    <nav class="navbar">
-        <div class="logo">KG</div>
-        <ul class="nav-links">
-            <li><a href="index.html">Home</a></li>
-            <li><a class="active" href="projects.html">Projects</a></li>
-        </ul>
+  <header>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="#projects">Projects</a>
+      <a href="Resume/resume.pdf" target="_blank">Resume</a>
+      <a href="https://linkedin.com/in/kumar-gaurav27" target="_blank">LinkedIn</a>
     </nav>
-</header>
+  </header>
 
-<section class="projects">
-    <h1>Projects</h1>
-
-    <div class="accordion">
-
-        <div class="accordion-item">
-            <button class="accordion-header">Customer Shopping Behaviour Analysis</button>
-            <div class="accordion-body">
-                <p><strong>Overview:</strong> End-to-end case study using Python, MySQL & Power BI. Analysed 3,900 purchase records to understand behaviour and business opportunities.</p>
-                <ul>
-                    <li>Female customers spend slightly above average</li>
-                    <li>27% were subscribers - low conversion, high opportunity</li>
-                    <li>Clothing & Accessories lead sales</li>
-                </ul>
-                <p><a href="projects/customer-shopping-behaviour/customer-shopping-behaviour.html" class="btn-download">🔗 View Full Case Study</a></p>
-
-            </div>
-        </div>
-
-        <div class="accordion-item">
-            <button class="accordion-header">Car Sales Forecasting</button>
-            <div class="accordion-body">
-                <p><strong>Overview:</strong> Built model-wise forecasts for wholesale and retail channels for upcoming 3 years.</p>
-                <ul>
-                    <li>Regression with lag features & seasonality</li>
-                    <li>Q1-Q4 forecasting for demand planning</li>
-                </ul>
-            </div>
-        </div>
-
-        <div class="accordion-item">
-            <button class="accordion-header">HR Analytics</button>
-            <div class="accordion-body">
-                <p><strong>Overview:</strong> Identified attrition drivers, employee segmentation and retention strategies.</p>
-                <ul>
-                    <li>High attrition in first 12 months</li>
-                    <li>Promotion lag linked with exits</li>
-                </ul>
-            </div>
-        </div>
-
+  <section class="projects" id="projects">
+    <h1>All Projects</h1>
+    <div class="project-grid">
+      <div class="project-card">
+        <h3>Customer Shopping Behaviour</h3>
+        <p>End-to-end analytics using Python, SQL & Power BI to identify customer patterns and improve retention strategy.</p>
+        <a href="projects/customer-shopping-behaviour/customer-shopping-behaviour.html">View Details →</a>
+      </div>
+      <div class="project-card">
+        <h3>Car Sales Forecasting</h3>
+        <p>Forecasting car sales trends using time series models and predictive analytics to optimize production decisions.</p>
+        <a href="projects/car-sales-forecasting/car-sales-forecasting.html">View Details →</a>
+      </div>
+      <div class="project-card">
+        <h3>HR Analytics</h3>
+        <p>Analyzed workforce data to identify attrition drivers, performance trends, and actionable insights.</p>
+        <a href="projects/hr-analytics/hr-analytics.html">View Details →</a>
+      </div>
     </div>
-</section>
+  </section>
 
-<footer>
-    <p>© 2025 Kumar Gaurav | Data Analyst Portfolio</p>
-</footer>
-
+  <footer>
+    © 2025 Kumar Gaurav | Data Detective — Turning data mysteries into clear business insights
+  </footer>
 </body>
 </html>
