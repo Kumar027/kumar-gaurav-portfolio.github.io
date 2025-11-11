@@ -1,98 +1,79 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Kumar Gaurav | Data Detective</title>
   <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    body { font-family: 'Poppins', sans-serif; color: #f1f1f1; overflow-x: hidden; }
-    a { text-decoration: none; color: inherit; }
-    header { position: fixed; width: 100%; top: 0; left: 0; background: rgba(3,16,37,0.95); display: flex; justify-content: space-between; align-items: center; padding: 15px 60px; z-index: 1000; }
-    header .logo { color: #C69B30; font-weight: 700; font-size: 1.5rem; }
-    header nav a { margin-left: 25px; font-weight: 500; transition: color 0.3s; }
-    header nav a:hover { color: #C69B30; }
+    *{margin:0;padding:0;box-sizing:border-box}
+    body{font-family:'Poppins',system-ui,sans-serif;color:#f1f1f1;overflow-x:hidden;background:linear-gradient(120deg,#031025,#041933,#072043,#0b2857);background-size:300% 300%;animation:gradientBG 18s ease infinite}
+    @keyframes gradientBG{0%{background-position:0% 50%}50%{background-position:100% 50%}100%{background-position:0% 50%}}
+    a{text-decoration:none;color:inherit}
 
-    /* Animated Gradient Background */
-    @keyframes gradientBG { 0% {background-position: 0% 50%;} 50% {background-position: 100% 50%;} 100% {background-position: 0% 50%;} }
-    body { background: linear-gradient(-45deg, #031025, #041933, #072043, #0b2857); background-size: 400% 400%; animation: gradientBG 15s ease infinite; }
+    header{position:fixed;top:0;left:0;width:100%;background:rgba(3,16,37,0.95);display:flex;justify-content:space-between;align-items:center;padding:14px 48px;z-index:1000;backdrop-filter:blur(6px)}
+    header nav a{margin-left:24px;font-weight:500;color:#e6eef8;transition:color .28s}
+    header nav a:hover{color:#C69B30}
 
-    /* Preloader */
-    #preloader { position: fixed; top: 0; left: 0; width: 100%; height: 100vh; background: #031025; display: flex; justify-content: center; align-items: center; z-index: 2000; }
-    .loader { font-size: 2rem; color: #C69B30; border: 3px solid #C69B30; padding: 20px 30px; border-radius: 50%; animation: spin 2s linear infinite; }
-    @keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+    section.hero{min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:120px 20px 80px}
+    .hero img{width:200px;height:200px;border-radius:50%;border:3px solid #C69B30;object-fit:cover;margin-bottom:18px}
+    .hero h1{font-size:2.6rem;font-weight:700;color:#fff}
+    .hero p.tagline{color:#C69B30;font-size:1.1rem;margin:10px 0}
+    .hero p.desc{color:#d6e6f5;max-width:620px;line-height:1.6;margin-top:10px}
+    .buttons{margin-top:24px;display:flex;flex-wrap:wrap;justify-content:center;gap:12px}
+    .btn{border:1px solid #C69B30;color:#C69B30;padding:10px 16px;border-radius:6px;font-weight:600;transition:all .3s}
+    .btn:hover{background:#C69B30;color:#031025;transform:translateY(-3px)}
 
-    /* Hero Section */
-    section.hero { min-height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; padding: 100px 20px; }
-    .hero img { width: 180px; height: 180px; border-radius: 50%; border: 3px solid #C69B30; margin-bottom: 20px; object-fit: cover; }
-    .hero h1 { font-size: 2.5rem; color: #fff; }
-    .hero p.tagline { color: #C69B30; font-size: 1.1rem; margin-top: 10px; animation: fadeIn 3s ease; }
-    .hero p.desc { margin-top: 20px; color: #d0d0d0; max-width: 600px; line-height: 1.6; }
-    .buttons { margin-top: 25px; }
-    .buttons a { border: 1px solid #C69B30; color: #C69B30; padding: 10px 16px; border-radius: 6px; margin: 0 10px; transition: all 0.3s; }
-    .buttons a:hover { background: #C69B30; color: #031025; }
+    section.skills,section.projects,section.contact{padding:80px 20px;text-align:center}
+    h2.section-title{color:#C69B30;margin-bottom:25px;font-size:1.8rem}
+    .skill-badges{display:flex;flex-wrap:wrap;justify-content:center;gap:12px}
+    .badge{background:rgba(198,155,48,0.15);border:1px solid #C69B30;color:#C69B30;padding:8px 14px;border-radius:20px;font-weight:600}
 
-    /* Skills Section */
-    section.skills { padding: 80px 20px; text-align: center; }
-    h2 { color: #C69B30; margin-bottom: 25px; font-size: 1.8rem; }
-    .skill-badges { display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; }
-    .badge { background: rgba(198,155,48,0.15); border: 1px solid #C69B30; color: #C69B30; padding: 8px 14px; border-radius: 20px; font-weight: 600; }
+    .project-grid{display:flex;flex-wrap:wrap;justify-content:center;gap:24px;margin-top:25px}
+    .project-card{background:rgba(255,255,255,0.05);border:1px solid rgba(198,155,48,0.2);border-radius:10px;padding:20px;width:300px;transition:transform .3s}
+    .project-card:hover{transform:translateY(-8px);border-color:#C69B30}
+    .project-card h3{color:#C69B30;margin-bottom:10px}
+    .project-card p{font-size:.95rem;color:#d0d0d0}
+    .project-card a{display:inline-block;margin-top:10px;color:#C69B30;font-weight:600}
 
-    /* Projects Section */
-    section.projects { padding: 80px 20px; text-align: center; }
-    .project-grid { display: flex; flex-wrap: wrap; justify-content: center; gap: 25px; }
-    .project-card { background: rgba(255,255,255,0.05); border: 1px solid rgba(198,155,48,0.2); border-radius: 10px; padding: 20px; width: 300px; transition: transform 0.3s; }
-    .project-card:hover { transform: translateY(-8px); border-color: #C69B30; }
-    .project-card h3 { color: #C69B30; margin-bottom: 10px; }
-    .project-card p { font-size: 0.95rem; color: #d0d0d0; }
-    .project-card a { display: inline-block; margin-top: 10px; color: #C69B30; font-weight: 600; }
+    .view-all{margin-top:40px}
+    .view-all a{background:#C69B30;color:#031025;padding:10px 22px;border-radius:6px;font-weight:700;transition:all .3s}
+    .view-all a:hover{background:#f1c54c}
 
-    /* Contact Section */
-    section.contact { padding: 80px 20px; text-align: center; }
-    section.contact p { margin-bottom: 10px; }
-    section.contact a { color: #C69B30; }
+    section.contact p{margin-bottom:10px}
+    section.contact a{color:#C69B30}
 
-    /* Footer */
-    footer { background: rgba(3,16,37,0.95); text-align: center; padding: 20px; font-size: 0.9rem; color: #aaa; }
+    footer{background:rgba(3,16,37,0.9);text-align:center;padding:20px;font-size:.9rem;color:#9fb0c6}
 
-    /* Responsive */
-    @media (max-width: 768px) {
-      header { padding: 15px 20px; flex-direction: column; }
-      header nav { margin-top: 10px; }
-      .project-card { width: 90%; }
+    @media(max-width:768px){
+      header{padding:12px 24px;flex-direction:column}
+      .project-card{width:90%}
     }
-
-    @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
   </style>
 </head>
 <body>
-
-  <div id="preloader"><div class="loader">KG</div></div>
-
   <header>
-    <div class="logo">KG</div>
     <nav>
       <a href="#home">Home</a>
       <a href="#skills">Skills</a>
       <a href="#projects">Projects</a>
       <a href="#contact">Contact</a>
+      <a href="Resume/resume.pdf" target="_blank">Resume</a>
     </nav>
   </header>
 
   <section class="hero" id="home">
-    <img src="images/profile.jpg" alt="Kumar Gaurav">
+    <img src="images/profile.jpg" alt="Kumar Gaurav" />
     <h1>Kumar Gaurav</h1>
     <p class="tagline">Data Detective — Turning data mysteries into clear business insights</p>
-    <p class="desc">I’m a data-driven analyst passionate about uncovering business insights using Python, SQL, and Power BI. I turn raw data into meaningful visual stories that guide smarter decisions.</p>
+    <p class="desc">I’m a data analyst passionate about uncovering insights through Python, SQL, and Power BI. I transform raw data into stories that drive business success.</p>
     <div class="buttons">
-      <a href="Resume/resume.pdf" target="_blank">📄 View Resume</a>
-      <a href="https://linkedin.com/in/kumar-gaurav27" target="_blank">🔗 LinkedIn</a>
+      <a href="Resume/resume.pdf" target="_blank" class="btn">📄 View Resume</a>
+      <a href="https://linkedin.com/in/kumar-gaurav27" target="_blank" class="btn">🔗 LinkedIn</a>
     </div>
   </section>
 
   <section class="skills" id="skills">
-    <h2>Skills & Tools</h2>
+    <h2 class="section-title">Skills & Tools</h2>
     <div class="skill-badges">
       <span class="badge">Python</span>
       <span class="badge">SQL</span>
@@ -100,35 +81,38 @@
       <span class="badge">Pandas</span>
       <span class="badge">NumPy</span>
       <span class="badge">Excel</span>
-      <span class="badge">Data Cleaning</span>
       <span class="badge">EDA</span>
-      <span class="badge">Data Visualization</span>
+      <span class="badge">Data Cleaning</span>
+      <span class="badge">Visualization</span>
     </div>
   </section>
 
   <section class="projects" id="projects">
-    <h2>Featured Projects</h2>
+    <h2 class="section-title">Featured Projects</h2>
     <div class="project-grid">
       <div class="project-card">
         <h3>Customer Shopping Behaviour</h3>
-        <p>End-to-end analytics project using Python, SQL & Power BI to analyze customer purchase patterns and improve marketing strategy.</p>
+        <p>End-to-end analytics using Python, SQL & Power BI to understand customer patterns and improve marketing strategy.</p>
         <a href="projects/customer-shopping-behaviour/customer-shopping-behaviour.html">View Details →</a>
       </div>
       <div class="project-card">
         <h3>Car Sales Forecasting</h3>
-        <p>Forecasting car sales trends using time series models and predictive analytics to help optimize production and sales decisions.</p>
+        <p>Forecasting trends using time series and predictive models for smarter production and sales planning.</p>
         <a href="projects/car-sales-forecasting/car-sales-forecasting.html">View Details →</a>
       </div>
       <div class="project-card">
         <h3>HR Analytics</h3>
-        <p>Analyzed workforce data to identify attrition drivers, performance trends, and actionable insights for employee retention.</p>
+        <p>Workforce insights and attrition analysis to improve employee retention and performance evaluation.</p>
         <a href="projects/hr-analytics/hr-analytics.html">View Details →</a>
       </div>
+    </div>
+    <div class="view-all">
+      <a href="projects.html">View All Projects →</a>
     </div>
   </section>
 
   <section class="contact" id="contact">
-    <h2>Contact Me</h2>
+    <h2 class="section-title">Contact</h2>
     <p>📧 <a href="mailto:kumargauravraja27@gmail.com">kumargauravraja27@gmail.com</a></p>
     <p>🔗 <a href="https://linkedin.com/in/kumar-gaurav27" target="_blank">linkedin.com/in/kumar-gaurav27</a></p>
   </section>
@@ -136,13 +120,5 @@
   <footer>
     © 2025 Kumar Gaurav | Data Detective — Turning data mysteries into clear business insights
   </footer>
-
-  <script>
-    window.addEventListener('load', ()=>{
-      const preloader = document.getElementById('preloader');
-      setTimeout(()=>{ preloader.style.opacity='0'; preloader.style.transition='opacity 0.8s'; }, 1000);
-      setTimeout(()=>{ preloader.style.display='none'; }, 1800);
-    });
-  </script>
 </body>
 </html>
