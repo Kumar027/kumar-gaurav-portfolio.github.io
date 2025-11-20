@@ -9,9 +9,29 @@
     body{font-family:'Poppins',system-ui,-apple-system,Segoe UI,Roboto,Arial;color:#eef6ff;background:linear-gradient(120deg,#031025 0%,#041933 50%,#072043 100%);background-size:300% 300%;animation:gradientBG 18s ease infinite}
     @keyframes gradientBG{0%{background-position:0% 50%}50%{background-position:100% 50%}100%{background-position:0% 50%}}
     a{text-decoration:none;color:inherit}
-    header{position:fixed;left:0;right:0;top:0;background:rgba(3,16,37,0.92);backdrop-filter:blur(6px);padding:12px 28px;display:flex;justify-content:flex-end;gap:18px;z-index:1000}
-    header a{color:#e9f4ff;font-weight:600;padding:8px 10px;border-radius:6px}
-    header a:hover{color:#031025;background:#C69B30}
+    
+    /* NEW NAVBAR (added as requested) */
+    header{
+      position:fixed;
+      left:0;right:0;top:0;
+      background:rgba(3,16,37,0.92);
+      backdrop-filter:blur(6px);
+      padding:12px 28px;
+      display:flex;
+      justify-content:flex-end;
+      gap:18px;
+      z-index:1000
+    }
+    header a{
+      color:#e9f4ff;
+      font-weight:600;
+      padding:8px 10px;
+      border-radius:6px
+    }
+    header a:hover{
+      color:#031025;
+      background:#C69B30
+    }
 
     main{max-width:1100px;margin:100px auto 80px;padding:20px}
 
@@ -40,8 +60,6 @@
     .view-all{display:flex;justify-content:center;margin-top:20px}
     .view-all a{background:#C69B30;color:#031025;padding:10px 20px;border-radius:8px;font-weight:800}
 
-    /* Contact & footer */
-    .contact p{color:#d7e9fb}
     footer{text-align:center;color:#9fb0c6;margin-top:40px;padding-bottom:40px}
 
     @media(max-width:720px){
@@ -51,7 +69,11 @@
   </style>
 </head>
 <body>
+
+  <!-- NEW NAVBAR (added here) -->
   <header>
+    <a href="index.html">Home</a>
+    <a href="projects.html">Projects</a>
     <a href="Resume/resume.pdf" target="_blank">Resume</a>
     <a href="https://linkedin.com/in/kumar-gaurav27" target="_blank">LinkedIn</a>
   </header>
@@ -85,12 +107,14 @@
     <!-- Projects -->
     <section id="projects">
       <h2>Featured Projects</h2>
+      
       <div class="projects-grid">
+
         <!-- Customer Shopping Behaviour -->
         <div class="card">
           <div class="thumb">
             <a href="projects/customer-shopping-behaviour/customer-shopping-behaviour.html">
-              <img src="projects/customer-shopping-behaviour/Dashboard Image.png" alt="Customer Shopping Behaviour dashboard thumbnail">
+              <img src="projects/customer-shopping-behaviour/Dashboard Image.png" alt="Customer Shopping Behaviour dashboard">
             </a>
           </div>
           <h3>Customer Shopping Behaviour</h3>
@@ -102,26 +126,14 @@
         <div class="card">
           <div class="thumb">
             <a href="projects/Car Sales Forecasting/Car-Sales-Forecasting.html">
-              <img src="projects/Car Sales Forecasting/Car Sales Forecasting Thumnail.png" alt="Car Sales Forecasting thumbnail">
+              <img src="projects/Car Sales Forecasting/Car Sales Forecasting Thumnail.png" alt="Car Sales Forecasting">
             </a>
           </div>
           <h3>Car Sales Forecasting</h3>
-          <p>Supply forecasting and planning for Jaguar & Land Rover using historical sales, inventory patterns and forecasting models to support production and planning.</p>
+          <p>Supply forecasting and planning for Jaguar & Land Rover using historical sales, inventory trends and forecasting models.</p>
           <a href="projects/Car Sales Forecasting/Car-Sales-Forecasting.html">View Details →</a>
         </div>
 
-        <!-- HR Analytics -->
-        <div class="card">
-          <div class="thumb">
-            <a href="projects/hr-analytics/hr-analytics.html">
-              <!-- If you have a thumbnail for HR, put it in the hr-analytics folder and update the filename -->
-              <img src="projects/hr-analytics/hr-thumbnail.png" alt="HR Analytics thumbnail" onerror="this.style.opacity='0.06'">
-            </a>
-          </div>
-          <h3>HR Analytics</h3>
-          <p>Workforce analysis to identify attrition drivers, performance trends and create dashboard-driven interventions to reduce churn.</p>
-          <a href="projects/hr-analytics/hr-analytics.html">View Details →</a>
-        </div>
       </div>
 
       <div class="view-all">
@@ -130,12 +142,10 @@
     </section>
 
     <!-- Contact -->
-    <section id="contact" style="margin-top:40px">
+    <section id="contact">
       <h2>Contact</h2>
-      <div class="contact">
-        <p>📧 <a href="mailto:kumargauravraja27@gmail.com">kumargauravraja27@gmail.com</a></p>
-        <p>🔗 <a href="https://linkedin.com/in/kumar-gaurav27" target="_blank">linkedin.com/in/kumar-gaurav27</a></p>
-      </div>
+      <p>📧 <a href="mailto:kumargauravraja27@gmail.com">kumargauravraja27@gmail.com</a></p>
+      <p>🔗 <a href="https://linkedin.com/in/kumar-gaurav27" target="_blank">linkedin.com/in/kumar-gaurav27</a></p>
     </section>
   </main>
 
