@@ -2,68 +2,112 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>All Projects | Kumar Gaurav</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Projects — Kumar Gaurav</title>
   <style>
     *{margin:0;padding:0;box-sizing:border-box}
-    body{font-family:'Poppins',system-ui,sans-serif;color:#f1f1f1;overflow-x:hidden;background:linear-gradient(120deg,#031025,#041933,#072043,#0b2857);background-size:300% 300%;animation:gradientBG 18s ease infinite}
+    body{font-family:'Poppins',system-ui,-apple-system,Segoe UI,Roboto,Arial;color:#eef6ff;background:linear-gradient(120deg,#031025 0%,#041933 50%,#072043 100%);background-size:300% 300%;animation:gradientBG 18s ease infinite}
     @keyframes gradientBG{0%{background-position:0% 50%}50%{background-position:100% 50%}100%{background-position:0% 50%}}
     a{text-decoration:none;color:inherit}
 
-    header{position:fixed;top:0;left:0;width:100%;background:rgba(3,16,37,0.95);display:flex;justify-content:space-between;align-items:center;padding:14px 48px;z-index:1000;backdrop-filter:blur(6px)}
-    header nav a{margin-left:24px;font-weight:500;color:#e6eef8;transition:color .28s}
-    header nav a:hover{color:#C69B30}
+    /* NAVBAR — updated to match index.html */
+    header{
+      position:fixed;
+      left:0;right:0;top:0;
+      background:rgba(3,16,37,0.92);
+      backdrop-filter:blur(6px);
+      padding:12px 28px;
+      display:flex;
+      justify-content:flex-end;
+      gap:18px;
+      z-index:1000
+    }
+    header a{
+      color:#e9f4ff;
+      font-weight:600;
+      padding:8px 10px;
+      border-radius:6px
+    }
+    header a:hover{
+      color:#031025;
+      background:#C69B30
+    }
 
-    section.projects{padding:120px 20px 80px;text-align:center}
-    h1{color:#C69B30;font-size:2rem;margin-bottom:30px}
-    .project-grid{display:flex;flex-wrap:wrap;justify-content:center;gap:24px}
-    .project-card{background:rgba(255,255,255,0.05);border:1px solid rgba(198,155,48,0.2);border-radius:10px;padding:20px;width:300px;transition:transform .3s}
-    .project-card:hover{transform:translateY(-8px);border-color:#C69B30}
-    .project-card h3{color:#C69B30;margin-bottom:10px}
-    .project-card p{font-size:.95rem;color:#d0d0d0}
-    .project-card a{display:inline-block;margin-top:10px;color:#C69B30;font-weight:600}
+    main{max-width:1100px;margin:100px auto;padding:20px}
+    h1{color:#C69B30;margin-bottom:18px}
 
-    footer{background:rgba(3,16,37,0.9);text-align:center;padding:20px;font-size:.9rem;color:#9fb0c6;margin-top:60px}
+    .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:18px}
+    .card{background:rgba(255,255,255,0.03);border:1px solid rgba(198,155,48,0.06);border-radius:10px;padding:14px;display:flex;flex-direction:column;gap:10px}
+    .card .thumb{height:160px;overflow:hidden;border-radius:8px;border:2px solid rgba(198,155,48,0.12)}
+    .card .thumb img{width:100%;height:100%;object-fit:cover}
+    .card h3{color:#C69B30;margin:0}
+    .card p{color:#d7e9fb;line-height:1.45}
+    .card a{align-self:flex-end;color:#C69B30;font-weight:800}
 
-    @media(max-width:768px){
-      header{padding:12px 24px;flex-direction:column}
-      .project-card{width:90%}
+    footer{text-align:center;color:#9fb0c6;margin-top:36px;padding-bottom:40px}
+
+    @media(max-width:720px){
+      header{justify-content:center}
     }
   </style>
 </head>
 <body>
+
+  <!-- MATCHED NAVBAR -->
   <header>
-    <nav>
-      <a href="index.html">Home</a>
-      <a href="#projects">Projects</a>
-      <a href="Resume/resume.pdf" target="_blank">Resume</a>
-      <a href="https://linkedin.com/in/kumar-gaurav27" target="_blank">LinkedIn</a>
-    </nav>
+    <a href="index.html">Home</a>
+    <a href="projects.html">Projects</a>
+    <a href="Resume/resume.pdf" target="_blank">Resume</a>
+    <a href="https://linkedin.com/in/kumar-gaurav27" target="_blank">LinkedIn</a>
   </header>
 
-  <section class="projects" id="projects">
+  <main>
     <h1>All Projects</h1>
-    <div class="project-grid">
-      <div class="project-card">
+
+    <div class="grid">
+
+      <!-- Customer Shopping Behaviour -->
+      <div class="card">
+        <div class="thumb">
+          <a href="projects/customer-shopping-behaviour/customer-shopping-behaviour.html">
+            <img src="projects/customer-shopping-behaviour/Dashboard Image.png" alt="Customer Shopping Behaviour">
+          </a>
+        </div>
         <h3>Customer Shopping Behaviour</h3>
-        <p>End-to-end analytics using Python, SQL & Power BI to identify customer patterns and improve retention strategy.</p>
+        <p>End-to-end study (Python, MySQL, Power BI) analysing customer segments, subscription behaviour, and category performance.</p>
         <a href="projects/customer-shopping-behaviour/customer-shopping-behaviour.html">View Details →</a>
       </div>
-      <div class="project-card">
+
+      <!-- Car Sales Forecasting -->
+      <div class="card">
+        <div class="thumb">
+          <a href="projects/Car Sales Forecasting/Car-Sales-Forecasting.html">
+            <img src="projects/Car Sales Forecasting/Car Sales Forecasting Thumnail.png" alt="Car Sales Forecasting">
+          </a>
+        </div>
         <h3>Car Sales Forecasting</h3>
-        <p>Forecasting car sales trends using time series models and predictive analytics to optimize production decisions.</p>
+        <p>Supply forecasting & planning for Jaguar Land Rover using historical wholesale/retail data and time-series forecasting for 2026–2028.</p>
         <a href="projects/Car Sales Forecasting/Car-Sales-Forecasting.html">View Details →</a>
       </div>
-      <div class="project-card">
+
+      <!-- HR Analytics (Optional Placeholder) -->
+      <div class="card">
+        <div class="thumb">
+          <a href="projects/hr-analytics/hr-analytics.html">
+            <img src="projects/hr-analytics/hr-thumbnail.png" alt="HR Analytics" onerror="this.style.opacity='0.06'">
+          </a>
+        </div>
         <h3>HR Analytics</h3>
-        <p>Analyzed workforce data to identify attrition drivers, performance trends, and actionable insights.</p>
+        <p>Attrition analysis and segmentation dashboard offering insights to reduce churn and improve workforce planning.</p>
         <a href="projects/hr-analytics/hr-analytics.html">View Details →</a>
       </div>
+
     </div>
-  </section>
+  </main>
 
   <footer>
     © 2025 Kumar Gaurav | Data Detective — Turning data mysteries into clear business insights
   </footer>
+
 </body>
 </html>
