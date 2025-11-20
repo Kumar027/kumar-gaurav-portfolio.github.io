@@ -2,120 +2,142 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Kumar Gaurav | Data Detective</title>
   <style>
     *{margin:0;padding:0;box-sizing:border-box}
-    body{font-family:'Poppins',system-ui,sans-serif;color:#f1f1f1;overflow-x:hidden;background:linear-gradient(120deg,#031025,#041933,#072043,#0b2857);background-size:300% 300%;animation:gradientBG 18s ease infinite}
+    body{font-family:'Poppins',system-ui,-apple-system,Segoe UI,Roboto,Arial;color:#eef6ff;background:linear-gradient(120deg,#031025 0%,#041933 50%,#072043 100%);background-size:300% 300%;animation:gradientBG 18s ease infinite}
     @keyframes gradientBG{0%{background-position:0% 50%}50%{background-position:100% 50%}100%{background-position:0% 50%}}
     a{text-decoration:none;color:inherit}
+    header{position:fixed;left:0;right:0;top:0;background:rgba(3,16,37,0.92);backdrop-filter:blur(6px);padding:12px 28px;display:flex;justify-content:flex-end;gap:18px;z-index:1000}
+    header a{color:#e9f4ff;font-weight:600;padding:8px 10px;border-radius:6px}
+    header a:hover{color:#031025;background:#C69B30}
 
-    header{position:fixed;top:0;left:0;width:100%;background:rgba(3,16,37,0.95);display:flex;justify-content:space-between;align-items:center;padding:14px 48px;z-index:1000;backdrop-filter:blur(6px)}
-    header nav a{margin-left:24px;font-weight:500;color:#e6eef8;transition:color .28s}
-    header nav a:hover{color:#C69B30}
+    main{max-width:1100px;margin:100px auto 80px;padding:20px}
 
-    section.hero{min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:120px 20px 80px}
-    .hero img{width:200px;height:200px;border-radius:50%;border:3px solid #C69B30;object-fit:cover;margin-bottom:18px}
-    .hero h1{font-size:2.6rem;font-weight:700;color:#fff}
-    .hero p.tagline{color:#C69B30;font-size:1.1rem;margin:10px 0}
-    .hero p.desc{color:#d6e6f5;max-width:620px;line-height:1.6;margin-top:10px}
-    .buttons{margin-top:24px;display:flex;flex-wrap:wrap;justify-content:center;gap:12px}
-    .btn{border:1px solid #C69B30;color:#C69B30;padding:10px 16px;border-radius:6px;font-weight:600;transition:all .3s}
-    .btn:hover{background:#C69B30;color:#031025;transform:translateY(-3px)}
+    /* Hero */
+    .hero{display:flex;align-items:center;gap:28px;padding:36px;border-radius:12px;background:rgba(255,255,255,0.02);border:1px solid rgba(198,155,48,0.06)}
+    .hero img{width:160px;height:160px;border-radius:16px;border:3px solid #C69B30;object-fit:cover}
+    .hero .meta h1{color:#fff;font-size:2.2rem;margin-bottom:6px}
+    .tagline{color:#C69B30;font-weight:700;margin-bottom:10px}
+    .hero .desc{color:#d7e9fb;max-width:640px;line-height:1.6}
 
-    section.skills,section.projects,section.contact{padding:80px 20px;text-align:center}
-    h2.section-title{color:#C69B30;margin-bottom:25px;font-size:1.8rem}
-    .skill-badges{display:flex;flex-wrap:wrap;justify-content:center;gap:12px}
-    .badge{background:rgba(198,155,48,0.15);border:1px solid #C69B30;color:#C69B30;padding:8px 14px;border-radius:20px;font-weight:600}
+    /* Sections */
+    section{margin-top:40px}
+    h2{color:#C69B30;margin-bottom:14px}
+    .skills { display:flex; gap:10px; flex-wrap:wrap; }
+    .badge{background:rgba(198,155,48,0.12);border:1px solid rgba(198,155,48,0.18);color:#C69B30;padding:8px 14px;border-radius:999px;font-weight:700}
 
-    .project-grid{display:flex;flex-wrap:wrap;justify-content:center;gap:24px;margin-top:25px}
-    .project-card{background:rgba(255,255,255,0.05);border:1px solid rgba(198,155,48,0.2);border-radius:10px;padding:20px;width:300px;transition:transform .3s}
-    .project-card:hover{transform:translateY(-8px);border-color:#C69B30}
-    .project-card h3{color:#C69B30;margin-bottom:10px}
-    .project-card p{font-size:.95rem;color:#d0d0d0}
-    .project-card a{display:inline-block;margin-top:10px;color:#C69B30;font-weight:600}
+    /* Projects grid */
+    .projects-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:18px}
+    .card{background:rgba(255,255,255,0.03);border:1px solid rgba(198,155,48,0.06);border-radius:10px;padding:14px;display:flex;flex-direction:column;gap:12px}
+    .card .thumb{width:100%;height:150px;overflow:hidden;border-radius:8px;border:2px solid rgba(198,155,48,0.14)}
+    .card .thumb img{width:100%;height:100%;object-fit:cover;display:block}
+    .card h3{color:#C69B30;margin:0;font-size:1.05rem}
+    .card p{color:#d7e9fb;font-size:0.95rem;line-height:1.45;margin:0}
+    .card a{align-self:flex-end;color:#C69B30;font-weight:800;margin-top:8px}
 
-    .view-all{margin-top:40px}
-    .view-all a{background:#C69B30;color:#031025;padding:10px 22px;border-radius:6px;font-weight:700;transition:all .3s}
-    .view-all a:hover{background:#f1c54c}
+    .view-all{display:flex;justify-content:center;margin-top:20px}
+    .view-all a{background:#C69B30;color:#031025;padding:10px 20px;border-radius:8px;font-weight:800}
 
-    section.contact p{margin-bottom:10px}
-    section.contact a{color:#C69B30}
+    /* Contact & footer */
+    .contact p{color:#d7e9fb}
+    footer{text-align:center;color:#9fb0c6;margin-top:40px;padding-bottom:40px}
 
-    footer{background:rgba(3,16,37,0.9);text-align:center;padding:20px;font-size:.9rem;color:#9fb0c6}
-
-    @media(max-width:768px){
-      header{padding:12px 24px;flex-direction:column}
-      .project-card{width:90%}
+    @media(max-width:720px){
+      .hero{flex-direction:column;align-items:center;text-align:center}
+      header{justify-content:center}
     }
   </style>
 </head>
 <body>
   <header>
-    <nav>
-      <a href="#home">Home</a>
-      <a href="#skills">Skills</a>
-      <a href="#projects">Projects</a>
-      <a href="#contact">Contact</a>
-      <a href="Resume/resume.pdf" target="_blank">Resume</a>
-    </nav>
+    <a href="Resume/resume.pdf" target="_blank">Resume</a>
+    <a href="https://linkedin.com/in/kumar-gaurav27" target="_blank">LinkedIn</a>
   </header>
 
-  <section class="hero" id="home">
-    <img src="images/profile.jpg" alt="Kumar Gaurav" />
-    <h1>Kumar Gaurav</h1>
-    <p class="tagline">Data Detective — Turning data mysteries into clear business insights</p>
-    <p class="desc">I’m a data analyst passionate about uncovering insights through Python, SQL, and Power BI. I transform raw data into stories that drive business success.</p>
-    <div class="buttons">
-      <a href="Resume/resume.pdf" target="_blank" class="btn">📄 View Resume</a>
-      <a href="https://linkedin.com/in/kumar-gaurav27" target="_blank" class="btn">🔗 LinkedIn</a>
-    </div>
-  </section>
-
-  <section class="skills" id="skills">
-    <h2 class="section-title">Skills & Tools</h2>
-    <div class="skill-badges">
-      <span class="badge">Python</span>
-      <span class="badge">SQL</span>
-      <span class="badge">Power BI</span>
-      <span class="badge">Pandas</span>
-      <span class="badge">NumPy</span>
-      <span class="badge">Excel</span>
-      <span class="badge">EDA</span>
-      <span class="badge">Data Cleaning</span>
-      <span class="badge">Visualization</span>
-    </div>
-  </section>
-
-  <section class="projects" id="projects">
-    <h2 class="section-title">Featured Projects</h2>
-    <div class="project-grid">
-      <div class="project-card">
-        <h3>Customer Shopping Behaviour</h3>
-        <p>End-to-end analytics using Python, SQL & Power BI to understand customer patterns and improve marketing strategy.</p>
-        <a href="projects/customer-shopping-behaviour/customer-shopping-behaviour.html">View Details →</a>
+  <main>
+    <!-- Hero -->
+    <section class="hero" id="home">
+      <img src="images/profile.jpg" alt="Profile photo - Kumar Gaurav">
+      <div class="meta">
+        <h1>Kumar Gaurav</h1>
+        <div class="tagline">Data Detective — Turning data mysteries into clear business insights</div>
+        <div class="desc">I build practical analytics pipelines and dashboards that convert data into clear business decisions. My work uses Python, SQL and Power BI to deliver reliable forecasts, dashboards and reports stakeholders trust.</div>
       </div>
-      <div class="project-card">
-        <h3>Car Sales Forecasting</h3>
-        <p>Forecasting trends using time series and predictive models for smarter production and sales planning.</p>
-        <a href="projects/Car Sales Forecasting/Car-Sales-Forecasting.html">View Details →</a>
-      </div>
-      <div class="project-card">
-        <h3>HR Analytics</h3>
-        <p>Workforce insights and attrition analysis to improve employee retention and performance evaluation.</p>
-        <a href="projects/hr-analytics/hr-analytics.html">View Details →</a>
-      </div>
-    </div>
-    <div class="view-all">
-      <a href="projects.html">View All Projects →</a>
-    </div>
-  </section>
+    </section>
 
-  <section class="contact" id="contact">
-    <h2 class="section-title">Contact</h2>
-    <p>📧 <a href="mailto:kumargauravraja27@gmail.com">kumargauravraja27@gmail.com</a></p>
-    <p>🔗 <a href="https://linkedin.com/in/kumar-gaurav27" target="_blank">linkedin.com/in/kumar-gaurav27</a></p>
-  </section>
+    <!-- Skills -->
+    <section id="skills">
+      <h2>Skills & Tools</h2>
+      <div class="skills">
+        <span class="badge">Python</span>
+        <span class="badge">Pandas</span>
+        <span class="badge">NumPy</span>
+        <span class="badge">MySQL</span>
+        <span class="badge">Power BI</span>
+        <span class="badge">Excel</span>
+        <span class="badge">EDA</span>
+        <span class="badge">Data Cleaning</span>
+      </div>
+    </section>
+
+    <!-- Projects -->
+    <section id="projects">
+      <h2>Featured Projects</h2>
+      <div class="projects-grid">
+        <!-- Customer Shopping Behaviour -->
+        <div class="card">
+          <div class="thumb">
+            <a href="projects/customer-shopping-behaviour/customer-shopping-behaviour.html">
+              <img src="projects/customer-shopping-behaviour/Dashboard Image.png" alt="Customer Shopping Behaviour dashboard thumbnail">
+            </a>
+          </div>
+          <h3>Customer Shopping Behaviour</h3>
+          <p>End-to-end analytics using Python, MySQL & Power BI to understand customer purchase patterns, subscription impact and category performance.</p>
+          <a href="projects/customer-shopping-behaviour/customer-shopping-behaviour.html">View Details →</a>
+        </div>
+
+        <!-- Car Sales Forecasting -->
+        <div class="card">
+          <div class="thumb">
+            <a href="projects/Car Sales Forecasting/Car-Sales-Forecasting.html">
+              <img src="projects/Car Sales Forecasting/Car Sales Forecasting.jpg" alt="Car Sales Forecasting thumbnail">
+            </a>
+          </div>
+          <h3>Car Sales Forecasting</h3>
+          <p>Supply forecasting and planning for Jaguar & Land Rover using historical sales, inventory patterns and forecasting models to support production and planning.</p>
+          <a href="projects/Car Sales Forecasting/Car-Sales-Forecasting.html">View Details →</a>
+        </div>
+
+        <!-- HR Analytics -->
+        <div class="card">
+          <div class="thumb">
+            <a href="projects/hr-analytics/hr-analytics.html">
+              <!-- If you have a thumbnail for HR, put it in the hr-analytics folder and update the filename -->
+              <img src="projects/hr-analytics/hr-thumbnail.png" alt="HR Analytics thumbnail" onerror="this.style.opacity='0.06'">
+            </a>
+          </div>
+          <h3>HR Analytics</h3>
+          <p>Workforce analysis to identify attrition drivers, performance trends and create dashboard-driven interventions to reduce churn.</p>
+          <a href="projects/hr-analytics/hr-analytics.html">View Details →</a>
+        </div>
+      </div>
+
+      <div class="view-all">
+        <a href="projects.html">View All Projects →</a>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" style="margin-top:40px">
+      <h2>Contact</h2>
+      <div class="contact">
+        <p>📧 <a href="mailto:kumargauravraja27@gmail.com">kumargauravraja27@gmail.com</a></p>
+        <p>🔗 <a href="https://linkedin.com/in/kumar-gaurav27" target="_blank">linkedin.com/in/kumar-gaurav27</a></p>
+      </div>
+    </section>
+  </main>
 
   <footer>
     © 2025 Kumar Gaurav | Data Detective — Turning data mysteries into clear business insights
