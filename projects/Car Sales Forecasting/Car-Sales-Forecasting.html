@@ -153,28 +153,100 @@
         <a class="download-btn" href="Car Sales Forecasting -(BRD).docx" download>📄 BRD</a>
         <a class="download-btn" href="Car Sales Forecasting.pptx" download>📊 PPT</a>
       </div>
-    </div>
-  </section>
+   </div>
+    </section>
 
-  <div class="grid">
+    <div class="grid" aria-describedby="project-summary">
+      <!-- Main column -->
+      <div>
+        <article class="card" id="project-summary">
+          <div class="section-title">Project Summary</div>
+          <p class="muted">Supply Forecasting and Planning for Jaguar Land Rover. Focused on model-level performance, seasonal patterns and 3-year forecasts to inform production and inventory decisions.</p>
 
-    <div class="card">
-      <div class="section-title">Key Highlights</div>
+          <h4 style="margin-top:16px;color:#fff">Full Project Description</h4>
 
-      <ul class="check">
-        <li>Analyzed historical Jaguar & Land Rover sales patterns</li>
-        <li>Identified rise–peak–decline sales cycle</li>
-        <li>Performed model-level supply gap analysis</li>
-        <li>Forecasted sales for 2026–2028</li>
-      </ul>
-    </div>
+          <h5 style="margin-top:12px;color:var(--gold)">1. Project Background</h5>
+          <p class="muted">Using historical distribution data, this analysis uncovers patterns across years, quarters and models — highlighting rise-peak-decline cycles, market share shifts and supply/demand mismatches.</p>
 
-    <aside class="card">
-      <div class="section-title">Business Impact</div>
+          <h5 style="margin-top:10px;color:var(--gold)">2. Key Objectives</h5>
+          <ul class="check">
+            <li>Analyze historical wholesale and retail sales (model & quarter level)</li>
+            <li>Detect oversupplied and undersupplied models; map inventory stress</li>
+            <li>Produce annual and quarterly forecasts (2026–2028)</li>
+            <li>Provide recommendations for production planning and sales alignment</li>
+          </ul>
 
-      <div class="impact-item">Improved demand-supply alignment</div>
-      <div class="impact-item">Reduced inventory losses</div>
-      <div class="impact-item">Optimized production strategy</div>
+          <h5 style="margin-top:12px;color:var(--gold)">3. Insights from the Analysis</h5>
+          <h6 style="margin-top:8px;color:#fff">A. Sales Trends Over the Years</h6>
+          <p class="muted">Sales grew from ~430k units to a peak near 1,000k around year 10, then declined to ~230k by year 17 — signalling structural market shifts needing strategic response.</p>
+
+          <h6 style="margin-top:8px;color:#fff">B. Model-Level Performance</h6>
+          <p class="muted">Strong performers include Discovery, Range Rover (and Sport/Evoque) while models like Defender and some Jaguar SUVs show excess wholesale but weak retail movement.</p>
+
+          <h6 style="margin-top:8px;color:#fff">C. Seasonal Analysis</h6>
+          <p class="muted">Retail shows Q1 strength, Q2 dip, Q3 recovery and Q4 peak. Wholesale ramps and often peaks in Q4, making Q4 a critical window for inventory and marketing alignment.</p>
+
+          <h6 style="margin-top:8px;color:#fff">D. Supply Gap Analysis</h6>
+          <ul class="check">
+            <li>Top oversupplied: Discovery Sport (+5,072 units), F-Pace, E-Pace series</li>
+            <li>Top undersupplied: Range Rover Sport (−19,043 units), Discovery, Range Rover, Defender</li>
+          </ul>
+
+          <h5 style="margin-top:12px;color:var(--gold)">4. Forecasting Results (2026–2028)</h5>
+          <p class="muted"><strong>Annual forecast highlights:</strong></p>
+          <ul class="check">
+            <li><strong>Jaguar:</strong> 2026 ≈ 386,647 · 2027 ≈ 396,848 · 2028 ≈ 407,048</li>
+            <li><strong>Land Rover:</strong> 2026 ≈ 438,911 · 2027 ≈ 442,174 · 2028 ≈ 445,437</li>
+            <li>Land Rover maintains ~52%+ share of combined volumes; Q4 is ~26–27% of yearly volume.</li>
+          </ul>
+
+          <h5 style="margin-top:12px;color:var(--gold)">5. Strategic Recommendations</h5>
+          <ol class="muted">
+            <li>Prioritise production for high-demand models (Range Rover family, Discovery).</li>
+            <li>Reduce wholesale shipments for slow-moving models to avoid dealer overstock.</li>
+            <li>Use combined annual + quarterly forecasts to synchronise manufacturing and marketing.</li>
+            <li>Focus Q4 campaigns and inventory placement to capture peak demand.</li>
+            <li>Revisit product mix and pricing strategy to address the long-term sales decline.</li>
+          </ol>
+
+          <h5 style="margin-top:12px;color:var(--gold)">GitHub-ready bullets (for README)</h5>
+          <ul class="check">
+            <li>End-to-end analysis of Jaguar Land Rover historical sales and inventory</li>
+            <li>Identified long-term growth → peak → decline cycle and seasonal patterns</li>
+            <li>Quarterly and annual forecasting for 2026–2028 at brand & model levels</li>
+            <li>Mapped model-wise supply gaps and provided production & inventory recommendations</li>
+            <li>Delivered dashboards, report and presentation to guide planning</li>
+          </ul>
+        </article>
+      </div>
+
+      <!-- Right column: quick facts, downloads, impact -->
+      <aside class="card" aria-labelledby="quick-facts">
+        <div id="quick-facts" class="section-title">Quick Facts</div>
+        <dl>
+          <dt>Scope</dt>
+          <dd class="muted">Brand-level sales, 3-year forecasts</dd>
+
+          <dt>Dataset</dt>
+          <dd class="muted">Historical distribution data: annual & quarterly by Brand</dd>
+
+          <dt>Tools</dt>
+          <dd class="muted">Python (Pandas, NumPy), Excel</dd>
+
+          <dt>Deliverables</dt>
+          <dd class="muted"> PPT, BRD, notebooks</dd>
+        </dl>
+
+        <div style="margin-top:18px">
+          <div class="section-title">Business Impact (Estimates)</div>
+          <div class="impact-list" style="margin-top:8px">
+            <div class="impact-item">Projected 12–18% improvement in alignment between supply and retail demand after optimisation</div>
+            <div class="impact-item">Estimated 8–10% uplift in category-level sales through targeted promotions</div>
+            <div class="impact-item">Reduced inventory carrying costs by targeting oversupplied models</div>
+          </div>
+        </div>
+
+
 
       <div style="margin-top:20px">
         <a class="back" href="../../projects.html">← Back to Projects</a>
