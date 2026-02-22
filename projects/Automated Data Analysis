@@ -1,0 +1,53 @@
+![Python](https://img.shields.io/badge/Python-3.9+-blue)
+![Streamlit](https://img.shields.io/badge/Streamlit-App-red)
+![Pandas](https://img.shields.io/badge/Pandas-Data%20Automation-orange)
+![License](https://img.shields.io/badge/License-MIT-green)
+![Status](https://img.shields.io/badge/Status-Active-brightgreen)
+
+# 🚀 Auto Data Cleaner Pro
+
+A production-style Data Automation SaaS built with Python and Streamlit.
+
+This tool automatically loads data from multiple sources, performs intelligent data cleaning, detects outliers, generates EDA reports, and exports a professional PDF summary — all in one click.
+
+---
+
+## 🌟 Key Features
+
+### 📂 Multi-Source Data Upload
+- CSV files  
+- Excel files (.xlsx)  
+- Public Google Sheets link  
+- SQL Database connection  
+
+### 🧹 Automated Data Cleaning
+- Duplicate removal  
+- Missing value detection  
+- Smart filling  
+  - Median for numerical columns  
+  - Mode for categorical columns  
+- Automatic data type handling  
+
+### ⚠ Outlier Detection
+- IQR-based detection for numerical columns  
+
+### 📊 Automated EDA
+- Dataset overview (rows, columns, missing values)  
+- Summary statistics  
+- Column insights  
+
+### 📄 Business PDF Report Export
+- Cleaning report  
+- Outlier summary  
+- Dataset statistics  
+- Downloadable PDF  
+
+### 🎨 SaaS Dashboard Interface
+- Clean layout  
+- Metric cards  
+- Structured output sections  
+- Interactive UI  
+
+---
+
+## 🏗 Project Structure
